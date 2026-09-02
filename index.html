@@ -22,7 +22,7 @@
 <body>
 
 <h1>Blurtly — Privacy Policy</h1>
-<p class="muted">Effective date: July 14, 2026</p>
+<p class="muted">Effective date: July 14, 2026 · Updated: September 2, 2026</p>
 
 <p><strong>The short version: Blurtly stores everything on your device and sends nothing anywhere.</strong>
 We have no servers, no accounts, no analytics, no ads, and no third-party SDKs.</p>
@@ -31,9 +31,14 @@ We have no servers, no accounts, no analytics, no ads, and no third-party SDKs.<
 <p>Blurtly works with the following data, all of which stays on your device:</p>
 <ul>
   <li><strong>Your snippets and folders</strong> — the text templates you create.</li>
-  <li><strong>Clipboard history ("Last 10 Copies")</strong> — the most recent texts you copied.</li>
-  <li><strong>Usage counters</strong> — how many times each snippet was inserted (stored locally so the app can show you your own statistics).</li>
-  <li><strong>App settings</strong> — such as whether onboarding was shown.</li>
+  <li><strong>Clipboard history ("Last 50 Copies")</strong> — the most recent texts you copied.</li>
+  <li><strong>Documents and attachments</strong> — files (PDF, images) you add to the app
+      or attach to snippets.</li>
+  <li><strong>Usage statistics and business events</strong> — which snippet was inserted and
+      when, together with the meaning you assigned to it (for example "Sale" or "New inquiry").
+      This powers the Insights and Statistics screens and is stored only on your device.</li>
+  <li><strong>App settings</strong> — such as enabled keyboard languages, emoji you use
+      frequently, and whether onboarding was shown.</li>
 </ul>
 <p>This data is stored in the app's private container on your device (shared between the app
 and its keyboard via Apple's App Group mechanism). It is never transmitted to us or to anyone else.</p>
@@ -46,6 +51,9 @@ reading your clipboard to build the "Last 10 Copies" history. </p>
   <li>The clipboard is read only at the moment the keyboard or the app is opened — iOS does not
       allow background clipboard monitoring, and we do not attempt it.</li>
   <li>Items marked as concealed by password managers are <strong>never</strong> saved to history.</li>
+  <li>Word suggestions are computed entirely on your device using Apple's built-in
+      dictionaries and a bundled word-frequency list. The word you are typing is processed
+      in memory only — it is never saved and never sent anywhere.</li>
   <li>Snippet insertion works even if Full Access is turned off.</li>
 </ul>
 
@@ -53,6 +61,24 @@ reading your clipboard to build the "Last 10 Copies" history. </p>
 <p>When you open the Blurtly app, it may read the clipboard to add a new copy to your history.
 iOS controls this with its own permission dialog ("Allow Paste"), and you can allow or deny it
 at any time in Settings → Blurtly → Paste from Other Apps.</p>
+
+<h2>Insights and exports</h2>
+<p>All analytics in Blurtly (Insights, Statistics, reports) are computed on your device from
+the local data described above. Numbers count snippet insertions — Blurtly never reads your
+conversations and cannot see your chats.</p>
+<p>You can export your own data as a report (PDF), a spreadsheet (Excel) or a CSV file.
+An export is created only when you tap the export button, and it leaves your device only
+through the standard iOS share sheet — to the destination <em>you</em> choose. We never
+receive a copy. If you choose to share an export with a third-party service (for example an
+AI assistant), that service's own privacy policy applies to the file you give it.</p>
+
+<h2>Purchases (Blurtly Pro)</h2>
+<p>Blurtly offers an optional subscription, Blurtly Pro. Payments are processed entirely by
+Apple through your Apple&nbsp;ID: we never see or store your payment details, and no Blurtly
+account is created. The only thing stored on your device is whether the subscription is
+active, so the app and keyboard know which features to unlock. You can manage or cancel the
+subscription anytime in your App&nbsp;Store settings, and restore a previous purchase with
+"Restore Purchases".</p>
 
 <h2>What we do NOT do</h2>
 <ul>
@@ -63,8 +89,16 @@ at any time in Settings → Blurtly → Paste from Other Apps.</p>
 </ul>
 
 <h2>Deleting your data</h2>
-<p>You can delete any snippet, folder, or history item inside the app at any time.
-Deleting the Blurtly app from your device permanently removes all of its data.</p>
+<p>Deleted snippets and folders first go to "Recently Deleted", where they can be restored
+for 30 days; after that they are purged automatically. "Delete Now" removes them from the
+trash immediately. Clipboard history items are deleted instantly.</p>
+<p>One honest detail: if a snippet was actually used, its name and text are kept in a small
+local archive even after deletion — so your statistics still make sense months later
+("which snippet stood behind these numbers"). This archive never leaves your device, and
+you can see exactly what it holds under Statistics → Archived snippets.</p>
+<p>Deleting the Blurtly app from your device permanently removes <em>all</em> of its data —
+snippets, history, statistics and the archive. Exports you saved elsewhere remain wherever
+you put them.</p>
 
 <h2>Children</h2>
 <p>Blurtly does not knowingly collect any data from anyone, including children.</p>
@@ -80,7 +114,7 @@ app will ask for any newly required permissions explicitly.</p>
 <hr>
 
 <h1>Blurtly — Политика конфиденциальности</h1>
-<p class="muted">Действует с: 14 июля 2026</p>
+<p class="muted">Действует с: 14 июля 2026 · Обновлено: 2 сентября 2026</p>
 
 <p><strong>Коротко: Blurtly хранит все данные на вашем устройстве и никуда ничего не отправляет.</strong>
 У нас нет серверов, аккаунтов, аналитики, рекламы и сторонних SDK.</p>
@@ -88,10 +122,15 @@ app will ask for any newly required permissions explicitly.</p>
 <h2>С какими данными работает Blurtly</h2>
 <ul>
   <li><strong>Ваши сниппеты и папки</strong> — текстовые заготовки, которые вы создаёте.</li>
-  <li><strong>История копий («Последние 10»)</strong> — недавно скопированные тексты.</li>
-  <li><strong>Счётчики использования</strong> — сколько раз вставлялся каждый сниппет
-      (хранятся локально, чтобы показывать вам вашу же статистику).</li>
-  <li><strong>Настройки приложения</strong> — например, показан ли онбординг.</li>
+  <li><strong>История копий («Last 50 Copies»)</strong> — недавно скопированные тексты.</li>
+  <li><strong>Документы и вложения</strong> — файлы (PDF, картинки), добавленные в приложение
+      или прикреплённые к сниппетам.</li>
+  <li><strong>Статистика использования и бизнес-события</strong> — какой сниппет и когда был
+      вставлен, вместе со смыслом, который вы ему назначили (например «Продажа» или «Новое
+      обращение»). На этом работают экраны Insights и Statistics; всё хранится только на
+      вашем устройстве.</li>
+  <li><strong>Настройки приложения</strong> — например, включённые языки клавиатуры, часто
+      используемые эмодзи, показан ли онбординг.</li>
 </ul>
 <p>Все данные лежат в закрытом контейнере приложения на вашем устройстве (общем для приложения
 и клавиатуры через механизм Apple App Group) и никогда не передаются ни нам, ни кому-либо ещё.</p>
@@ -104,6 +143,9 @@ app will ask for any newly required permissions explicitly.</p>
   <li>Буфер читается только в момент открытия клавиатуры или приложения — фоновое слежение
       за буфером в iOS невозможно, и мы его не ведём.</li>
   <li>Записи, помеченные менеджерами паролей как скрытые, <strong>никогда</strong> не сохраняются.</li>
+  <li>Подсказки слов вычисляются целиком на устройстве — по встроенным словарям Apple и
+      вшитому частотному списку. Набираемое слово обрабатывается только в памяти: оно
+      нигде не сохраняется и никуда не отправляется.</li>
   <li>Вставка сниппетов работает и без «Полного доступа».</li>
 </ul>
 
@@ -111,6 +153,23 @@ app will ask for any newly required permissions explicitly.</p>
 <p>При открытии приложения Blurtly может прочитать буфер, чтобы добавить новую копию в историю.
 Этим управляет системный диалог iOS («Вставить из…»); разрешение можно изменить в любой момент:
 Настройки → Blurtly → Вставка из других приложений.</p>
+
+<h2>Аналитика и экспорт</h2>
+<p>Вся аналитика Blurtly (Insights, Statistics, отчёты) считается на вашем устройстве из
+локальных данных, описанных выше. Цифры — это вставки сниппетов: Blurtly не читает вашу
+переписку и не видит чаты.</p>
+<p>Свои данные можно выгрузить: отчёт (PDF), таблицу (Excel) или CSV-файл. Экспорт создаётся
+только по вашему нажатию и покидает устройство только через стандартное окно «Поделиться» —
+туда, куда выберете <em>вы</em>. Мы копию не получаем. Если вы решите передать выгрузку
+стороннему сервису (например, ИИ-ассистенту), к этому файлу применяется политика того
+сервиса.</p>
+
+<h2>Покупки (Blurtly Pro)</h2>
+<p>В Blurtly есть необязательная подписка Blurtly Pro. Платежи полностью обрабатывает Apple
+через ваш Apple&nbsp;ID: мы не видим и не храним платёжные данные, аккаунт Blurtly не
+создаётся. На устройстве хранится только признак «подписка активна», чтобы приложение и
+клавиатура знали, какие функции открыть. Управлять подпиской и отменять её можно в
+настройках App&nbsp;Store, восстановить покупку — кнопкой «Restore Purchases».</p>
 
 <h2>Чего мы НЕ делаем</h2>
 <ul>
@@ -121,8 +180,16 @@ app will ask for any newly required permissions explicitly.</p>
 </ul>
 
 <h2>Удаление данных</h2>
-<p>Любой сниппет, папку или запись истории можно удалить в приложении. Удаление самого
-приложения Blurtly с устройства безвозвратно стирает все его данные.</p>
+<p>Удалённые сниппеты и папки сначала попадают в «Recently Deleted», откуда их можно
+восстановить в течение 30 дней; затем они вычищаются автоматически. «Delete Now» стирает
+их из корзины сразу. Записи истории копий удаляются мгновенно.</p>
+<p>Честная деталь: если сниппетом реально пользовались, его название и текст сохраняются
+в небольшом локальном архиве даже после удаления — чтобы ваша статистика оставалась
+осмысленной спустя месяцы («какой сниппет стоял за этими цифрами»). Архив никогда не
+покидает устройство, а его содержимое видно вам самим: Statistics → Archived snippets.</p>
+<p>Удаление самого приложения Blurtly с устройства безвозвратно стирает <em>все</em> его
+данные — сниппеты, историю, статистику и архив. Выгрузки, сохранённые вами в другие места,
+остаются там, куда вы их положили.</p>
 
 <h2>Дети</h2>
 <p>Blurtly сознательно не собирает никаких данных ни у кого, включая детей.</p>
