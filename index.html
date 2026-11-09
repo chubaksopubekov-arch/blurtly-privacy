@@ -11,10 +11,14 @@
   h2 { font-size: 20px; margin-top: 36px; }
   h3 { font-size: 16px; }
   .muted { color: #6e6e73; font-size: 14px; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e5e5ea; vertical-align: top; }
+  th { color: #6e6e73; font-size: 13px; text-transform: uppercase; letter-spacing: .03em; }
   hr { border: none; border-top: 1px solid #e5e5ea; margin: 48px 0; }
   @media (prefers-color-scheme: dark) {
     body { background: #1c1c1e; color: #f2f2f7; }
     .muted { color: #98989d; }
+    th, td { border-bottom-color: #3a3a3c; }
     hr { border-top-color: #3a3a3c; }
   }
 </style>
@@ -22,45 +26,85 @@
 <body>
 
 <h1>Otvio — Privacy Policy</h1>
-<p class="muted">Effective date: July 14, 2026 · Updated: November 6, 2026</p>
+<p class="muted">Effective date: July 14, 2026 · Last updated: November 9, 2026</p>
 
 <p><strong>The short version: Otvio stores everything on your device and sends nothing anywhere.</strong>
-We have no servers, no accounts, no analytics, no ads, and no third-party SDKs.</p>
+We have no servers, no accounts, no analytics, no ads, and no third-party SDKs. In App&nbsp;Store
+terms, Otvio's privacy label is <strong>"Data Not Collected"</strong> — under Apple's definition,
+data that is processed only on your device is not "collected", and that is exactly how Otvio works.</p>
+
+<h2>What this policy covers</h2>
+<p>This policy covers the Otvio iOS app, its keyboard extension, and this web page.
+This page is a static document: it sets no cookies and runs no analytics or scripts.
+It is hosted on GitHub Pages; like any web host, GitHub may keep its own standard
+server logs — see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</p>
 
 <h2>What data Otvio handles</h2>
 <p>Otvio works with the following data, all of which stays on your device:</p>
 <ul>
   <li><strong>Your snippets and folders</strong> — the text templates you create.</li>
-  <li><strong>Clipboard history ("Last 50 Copies")</strong> — the most recent texts you copied.</li>
+  <li><strong>Clipboard history ("Last Copies")</strong> — the most recent texts you copied:
+      the last 10 items on the free plan, the last 50 with Otvio&nbsp;Pro.</li>
   <li><strong>Documents and attachments</strong> — files (PDF, images) you add to the app
       or attach to snippets.</li>
-  <li><strong>Usage statistics and business events</strong> — which snippet was inserted and
-      when, together with the meaning you assigned to it (for example "Sale" or "New inquiry").
-      This powers the Insights and Statistics screens and is stored only on your device.</li>
-  <li><strong>App settings</strong> — such as enabled keyboard languages, emoji you use
-      frequently, and whether onboarding was shown.</li>
+  <li><strong>Usage statistics and business events</strong> — which of your snippets was
+      inserted and when, together with the meaning you assigned to it (for example "Sale"
+      or "New inquiry"). This powers the Insights and Statistics screens.</li>
+  <li><strong>App settings</strong> — such as enabled keyboard languages, frequently used
+      emoji, and your report preferences.</li>
 </ul>
 <p>This data is stored in the app's private container on your device (shared between the app
-and its keyboard via Apple's App Group mechanism). It is never transmitted to us or to anyone else.</p>
+and its keyboard via Apple's App Group mechanism). It is never transmitted to us or to anyone
+else. There is no Otvio server it could be sent to.</p>
 
 <h2>The keyboard and Full Access</h2>
 <p>Otvio's keyboard requests the iOS "Allow Full Access" permission for one purpose only:
-reading your clipboard to build the "Last 10 Copies" history. </p>
+reading your clipboard to build the "Last Copies" history (10 items free / 50 with Pro).</p>
 <ul>
-  <li>The keyboard <strong>does not log, store, or transmit what you type</strong>.</li>
-  <li>The clipboard is read only at the moment the keyboard or the app is opened — iOS does not
-      allow background clipboard monitoring, and we do not attempt it.</li>
+  <li>The keyboard <strong>makes no network connections at all</strong> — with or without
+      Full Access. Although Full Access technically permits network use, Otvio's keyboard
+      never uses it: there is nothing to connect to.</li>
+  <li>The keyboard <strong>does not log, store, or transmit what you type</strong>. The only
+      activity it records is the fact that <em>your own snippet</em> was inserted — the local
+      counter behind your own Statistics and Insights screens.</li>
+  <li>The clipboard is read only at the moment the keyboard or the app is opened — iOS does
+      not allow background clipboard monitoring, and we do not attempt it.</li>
   <li>Items marked as concealed by password managers are <strong>never</strong> saved to history.</li>
   <li>Word suggestions are computed entirely on your device using Apple's built-in
-      dictionaries and a bundled word-frequency list. The word you are typing is processed
+      dictionaries and bundled word-frequency lists. The word you are typing is processed
       in memory only — it is never saved and never sent anywhere.</li>
   <li>Snippet insertion works even if Full Access is turned off.</li>
 </ul>
 
 <h2>Clipboard access in the app</h2>
-<p>When you open the Otvio app, it may read the clipboard to add a new copy to your history.
-iOS controls this with its own permission dialog ("Allow Paste"), and you can allow or deny it
-at any time in Settings → Otvio → Paste from Other Apps.</p>
+<p>When you open the Otvio app, it automatically adds the current clipboard text to your
+history — this is what keeps "Last Copies" useful, and it happens right away, without a
+prompt on every copy. iOS governs this with its system permission: the first time, iOS asks
+"Allow Paste from Other Apps?", and your choice (Allow / Deny / Ask every time) applies from
+then on. You can change it at any time in iOS Settings → Otvio → Paste from Other Apps.</p>
+
+<h2>Photos and files</h2>
+<p>When you attach an image, Otvio uses the system photo picker: the app receives only the
+photos you explicitly pick and has no access to the rest of your photo library. Files are
+added through the system document picker in the same way.</p>
+
+<h2>How long data is kept</h2>
+<p>Everything below lives on your device only, and all of it is erased if you delete the app.</p>
+<table>
+  <tr><th>Data</th><th>Kept for</th></tr>
+  <tr><td>Snippets, folders, documents</td><td>Until you delete them.</td></tr>
+  <tr><td>Deleted snippets and folders ("Recently Deleted")</td>
+      <td>30 days in the trash, restorable; then purged automatically. "Delete Now" purges immediately.</td></tr>
+  <tr><td>Clipboard history</td><td>Only the most recent 10 items (50 with Pro); older
+      entries fall off the list. Individual items can be deleted instantly.</td></tr>
+  <tr><td>Business events (Insights)</td><td>Full detail for 90 days; older events are
+      compacted into daily totals, which are kept so your long-term statistics still work.</td></tr>
+  <tr><td>Daily insertion statistics</td><td>365 days of daily detail; totals remain.</td></tr>
+  <tr><td>Archive of used snippets</td><td>If a snippet was actually used, its name and text
+      are kept in a small local archive after deletion — so months later your statistics can
+      still show which snippet stood behind the numbers. You can inspect this archive yourself
+      under Statistics → Archived snippets. It never leaves your device.</td></tr>
+</table>
 
 <h2>Insights and exports</h2>
 <p>All analytics in Otvio (Insights, Statistics, reports) are computed on your device from
@@ -78,129 +122,55 @@ Apple through your Apple&nbsp;ID: we never see or store your payment details, an
 account is created. The only thing stored on your device is whether the subscription is
 active, so the app and keyboard know which features to unlock. You can manage or cancel the
 subscription anytime in your App&nbsp;Store settings, and restore a previous purchase with
-"Restore Purchases".</p>
+"Restore Purchases". Apple is the only third party involved in running Otvio, and its
+handling of purchases is governed by <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>.</p>
 
-<h2>What we do NOT do</h2>
+<h2>What we never do</h2>
 <ul>
   <li>We do not collect, sell, or share any personal data.</li>
   <li>We do not use analytics, tracking, or advertising of any kind.</li>
   <li>We do not require registration or accounts.</li>
+  <li>We do not include any third-party SDKs in the app.</li>
   <li>We have no servers — there is nowhere for your data to go.</li>
 </ul>
 
-<h2>Deleting your data</h2>
-<p>Deleted snippets and folders first go to "Recently Deleted", where they can be restored
-for 30 days; after that they are purged automatically. "Delete Now" removes them from the
-trash immediately. Clipboard history items are deleted instantly.</p>
-<p>One honest detail: if a snippet was actually used, its name and text are kept in a small
-local archive even after deletion — so your statistics still make sense months later
-("which snippet stood behind these numbers"). This archive never leaves your device, and
-you can see exactly what it holds under Statistics → Archived snippets.</p>
-<p>Deleting the Otvio app from your device permanently removes <em>all</em> of its data —
-snippets, history, statistics and the archive. Exports you saved elsewhere remain wherever
-you put them.</p>
+<h2>Your data, your controls</h2>
+<p>Because everything is local, every control is in your hands:</p>
+<ul>
+  <li><strong>Full Access</strong> — turn it off anytime (iOS Settings → General → Keyboard →
+      Keyboards → Otvio). The keyboard keeps inserting snippets; only clipboard history stops updating.</li>
+  <li><strong>Clipboard capture in the app</strong> — allow, deny, or require a prompt in
+      iOS Settings → Otvio → Paste from Other Apps.</li>
+  <li><strong>Word suggestions</strong> — switch off in Otvio → Settings → Word suggestions.</li>
+  <li><strong>Delete anything</strong> — snippets, folders, history items, documents, and
+      custom statuses can be deleted in the app; "Delete Now" skips the 30-day trash.</li>
+  <li><strong>Delete everything</strong> — removing the Otvio app from your device permanently
+      erases <em>all</em> of its data: snippets, history, statistics, and the archive.
+      Exports you saved elsewhere remain wherever you put them.</li>
+</ul>
+<p>Since we hold no copy of your data, there is nothing for us to delete on our side — and
+nothing we could hand over, lose, or have breached.</p>
+
+<h2>Your rights (GDPR, CCPA and similar laws)</h2>
+<p>Privacy laws such as the EU GDPR and the California CCPA give you rights over personal
+data that companies process about you. Otvio's design makes most of them automatic: we do
+not process your personal data on any system of ours, so there is nothing for us to access,
+correct, export, or erase — your device holds the only copy, under your control, with the
+tools described above. If you believe we hold any personal data about you (for example,
+because you emailed us), contact us and we will resolve it.</p>
 
 <h2>Children</h2>
-<p>Otvio does not knowingly collect any data from anyone, including children.</p>
+<p>Otvio is a business tool and is not directed at children. It does not knowingly collect
+any data from anyone, including children.</p>
 
 <h2>Changes to this policy</h2>
 <p>If a future version of Otvio adds features that change how data is handled (for example,
-optional cloud sync), this policy will be updated before that version is released, and the
-app will ask for any newly required permissions explicitly.</p>
+optional cloud sync), this policy will be updated <em>before</em> that version is released,
+the "Last updated" date above will change, and the app will ask for any newly required
+permissions explicitly.</p>
 
 <h2>Contact</h2>
 <p>Questions about privacy: <a href="mailto:sopubekov.ch@gmail.com">sopubekov.ch@gmail.com</a></p>
-
-<hr>
-
-<h1>Otvio — Политика конфиденциальности</h1>
-<p class="muted">Действует с: 14 июля 2026 · Обновлено: 2 сентября 2026</p>
-
-<p><strong>Коротко: Otvio хранит все данные на вашем устройстве и никуда ничего не отправляет.</strong>
-У нас нет серверов, аккаунтов, аналитики, рекламы и сторонних SDK.</p>
-
-<h2>С какими данными работает Otvio</h2>
-<ul>
-  <li><strong>Ваши сниппеты и папки</strong> — текстовые заготовки, которые вы создаёте.</li>
-  <li><strong>История копий («Last 50 Copies»)</strong> — недавно скопированные тексты.</li>
-  <li><strong>Документы и вложения</strong> — файлы (PDF, картинки), добавленные в приложение
-      или прикреплённые к сниппетам.</li>
-  <li><strong>Статистика использования и бизнес-события</strong> — какой сниппет и когда был
-      вставлен, вместе со смыслом, который вы ему назначили (например «Продажа» или «Новое
-      обращение»). На этом работают экраны Insights и Statistics; всё хранится только на
-      вашем устройстве.</li>
-  <li><strong>Настройки приложения</strong> — например, включённые языки клавиатуры, часто
-      используемые эмодзи, показан ли онбординг.</li>
-</ul>
-<p>Все данные лежат в закрытом контейнере приложения на вашем устройстве (общем для приложения
-и клавиатуры через механизм Apple App Group) и никогда не передаются ни нам, ни кому-либо ещё.</p>
-
-<h2>Клавиатура и «Полный доступ»</h2>
-<p>Клавиатура Otvio запрашивает разрешение iOS «Разрешить полный доступ» с единственной целью —
-читать буфер обмена для истории «Последние 10 копий».</p>
-<ul>
-  <li>Клавиатура <strong>не записывает, не хранит и не передаёт то, что вы печатаете</strong>.</li>
-  <li>Буфер читается только в момент открытия клавиатуры или приложения — фоновое слежение
-      за буфером в iOS невозможно, и мы его не ведём.</li>
-  <li>Записи, помеченные менеджерами паролей как скрытые, <strong>никогда</strong> не сохраняются.</li>
-  <li>Подсказки слов вычисляются целиком на устройстве — по встроенным словарям Apple и
-      вшитому частотному списку. Набираемое слово обрабатывается только в памяти: оно
-      нигде не сохраняется и никуда не отправляется.</li>
-  <li>Вставка сниппетов работает и без «Полного доступа».</li>
-</ul>
-
-<h2>Буфер обмена в приложении</h2>
-<p>При открытии приложения Otvio может прочитать буфер, чтобы добавить новую копию в историю.
-Этим управляет системный диалог iOS («Вставить из…»); разрешение можно изменить в любой момент:
-Настройки → Otvio → Вставка из других приложений.</p>
-
-<h2>Аналитика и экспорт</h2>
-<p>Вся аналитика Otvio (Insights, Statistics, отчёты) считается на вашем устройстве из
-локальных данных, описанных выше. Цифры — это вставки сниппетов: Otvio не читает вашу
-переписку и не видит чаты.</p>
-<p>Свои данные можно выгрузить: отчёт (PDF), таблицу (Excel) или CSV-файл. Экспорт создаётся
-только по вашему нажатию и покидает устройство только через стандартное окно «Поделиться» —
-туда, куда выберете <em>вы</em>. Мы копию не получаем. Если вы решите передать выгрузку
-стороннему сервису (например, ИИ-ассистенту), к этому файлу применяется политика того
-сервиса.</p>
-
-<h2>Покупки (Otvio Pro)</h2>
-<p>В Otvio есть необязательная подписка Otvio Pro. Платежи полностью обрабатывает Apple
-через ваш Apple&nbsp;ID: мы не видим и не храним платёжные данные, аккаунт Otvio не
-создаётся. На устройстве хранится только признак «подписка активна», чтобы приложение и
-клавиатура знали, какие функции открыть. Управлять подпиской и отменять её можно в
-настройках App&nbsp;Store, восстановить покупку — кнопкой «Restore Purchases».</p>
-
-<h2>Чего мы НЕ делаем</h2>
-<ul>
-  <li>Не собираем, не продаём и не передаём персональные данные.</li>
-  <li>Не используем аналитику, трекинг и рекламу.</li>
-  <li>Не требуем регистрации и аккаунтов.</li>
-  <li>У нас нет серверов — вашим данным просто некуда «уходить».</li>
-</ul>
-
-<h2>Удаление данных</h2>
-<p>Удалённые сниппеты и папки сначала попадают в «Recently Deleted», откуда их можно
-восстановить в течение 30 дней; затем они вычищаются автоматически. «Delete Now» стирает
-их из корзины сразу. Записи истории копий удаляются мгновенно.</p>
-<p>Честная деталь: если сниппетом реально пользовались, его название и текст сохраняются
-в небольшом локальном архиве даже после удаления — чтобы ваша статистика оставалась
-осмысленной спустя месяцы («какой сниппет стоял за этими цифрами»). Архив никогда не
-покидает устройство, а его содержимое видно вам самим: Statistics → Archived snippets.</p>
-<p>Удаление самого приложения Otvio с устройства безвозвратно стирает <em>все</em> его
-данные — сниппеты, историю, статистику и архив. Выгрузки, сохранённые вами в другие места,
-остаются там, куда вы их положили.</p>
-
-<h2>Дети</h2>
-<p>Otvio сознательно не собирает никаких данных ни у кого, включая детей.</p>
-
-<h2>Изменения политики</h2>
-<p>Если будущие версии Otvio добавят функции, меняющие работу с данными (например,
-опциональную облачную синхронизацию), политика будет обновлена до выхода такой версии,
-а приложение явно запросит новые разрешения.</p>
-
-<h2>Контакт</h2>
-<p>Вопросы о конфиденциальности: <a href="mailto:sopubekov.ch@gmail.com">sopubekov.ch@gmail.com</a></p>
 
 </body>
 </html>
